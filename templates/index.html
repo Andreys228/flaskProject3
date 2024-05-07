@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+</head>
+<body>
+    <h1>Погода</h1>
+    <form method="post">
+        <label for="city">Введите город:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Получить погоду</button>
+    </form>
+    {% if weather %}
+    <h2>Погода в городе {{ city }}:</h2>
+    <p>Температура: {{ weather.temperature }}°C</p>
+    <p>Описание: {{ weather.description }}</p>
+    {% endif %}
+</body>
+</html>
